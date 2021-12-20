@@ -34,8 +34,8 @@ fn parse_input(input: &str) -> Manual {
         (x.parse::<usize>().unwrap(), y.parse::<usize>().unwrap())
     }).collect::<Vec<_>>();
 
-    let max_x = coords.iter().map(|&(x, y)| x).max().unwrap();
-    let max_y = coords.iter().map(|&(x, y)| y).max().unwrap();
+    let max_x = coords.iter().map(|&(x, _)| x).max().unwrap();
+    let max_y = coords.iter().map(|&(_, y)| y).max().unwrap();
 
     let mut grid = vec![vec![false; max_x+1]; max_y+1];
 
